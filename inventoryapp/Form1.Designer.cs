@@ -1,6 +1,6 @@
 ﻿namespace inventoryapp
 {
-    partial class MainMenu
+    partial class Form1
     {
         /// <summary>
         ///  Required designer variable.

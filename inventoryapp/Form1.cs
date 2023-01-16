@@ -1,8 +1,8 @@
 namespace inventoryapp
 {
-    public partial class MainMenu : Form
+    public partial class Form1 : Form
     {
-        public MainMenu()
+        public Form1()
         {
             InitializeComponent();
         }
