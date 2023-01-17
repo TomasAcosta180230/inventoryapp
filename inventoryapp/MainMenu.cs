@@ -17,7 +17,7 @@ namespace inventoryapp
         {
             //Minimizar la ventana
             this.WindowState = FormWindowState.Minimized;
-            this.OnMouseHover()
+            
         }
     }
 }
