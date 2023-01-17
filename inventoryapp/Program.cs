@@ -12,7 +12,7 @@ namespace inventoryapp
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new MainMenu());
-            //Hola 
+            //Hola como estas 
         }
     }
 }
