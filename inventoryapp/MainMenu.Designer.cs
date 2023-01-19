@@ -59,7 +59,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, 35);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(991, 131);
+            this.panel1.Size = new System.Drawing.Size(988, 131);
             this.panel1.TabIndex = 0;
             // 
             // TITTLE
@@ -94,7 +94,7 @@
             this.panel2.Controls.Add(this.User);
             this.panel2.Location = new System.Drawing.Point(0, 155);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1025, 382);
+            this.panel2.Size = new System.Drawing.Size(988, 382);
             this.panel2.TabIndex = 1;
             // 
             // Password
@@ -102,7 +102,7 @@
             this.Password.AutoSize = true;
             this.Password.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Password.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Password.Location = new System.Drawing.Point(443, 183);
+            this.Password.Location = new System.Drawing.Point(443, 170);
             this.Password.Name = "Password";
             this.Password.Size = new System.Drawing.Size(129, 27);
             this.Password.TabIndex = 5;
@@ -110,20 +110,22 @@
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(462, 282);
+            this.button1.Location = new System.Drawing.Point(462, 269);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 29);
             this.button1.TabIndex = 4;
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // PassInput
             // 
-            this.PassInput.Location = new System.Drawing.Point(363, 222);
+            this.PassInput.Location = new System.Drawing.Point(363, 209);
             this.PassInput.Name = "PassInput";
             this.PassInput.PlaceholderText = "Enter Password";
             this.PassInput.Size = new System.Drawing.Size(297, 27);
@@ -134,7 +136,7 @@
             // 
             this.UserInput.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.UserInput.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
-            this.UserInput.Location = new System.Drawing.Point(358, 120);
+            this.UserInput.Location = new System.Drawing.Point(358, 107);
             this.UserInput.Name = "UserInput";
             this.UserInput.PlaceholderText = "Enter the Username";
             this.UserInput.Size = new System.Drawing.Size(302, 27);
@@ -146,7 +148,7 @@
             this.User.AutoSize = true;
             this.User.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.User.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.User.Location = new System.Drawing.Point(471, 78);
+            this.User.Location = new System.Drawing.Point(471, 65);
             this.User.Name = "User";
             this.User.Size = new System.Drawing.Size(72, 27);
             this.User.TabIndex = 0;
@@ -158,7 +160,7 @@
             this.panel3.Controls.Add(this.progressMenu);
             this.panel3.Location = new System.Drawing.Point(-3, 530);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1025, 142);
+            this.panel3.Size = new System.Drawing.Size(994, 142);
             this.panel3.TabIndex = 2;
             // 
             // progressMenu
@@ -171,7 +173,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.panel4.BackColor = System.Drawing.Color.Black;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.pictureBox3);
             this.panel4.Controls.Add(this.pictureBox2);
