@@ -182,6 +182,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(985, 43);
             this.panel4.TabIndex = 3;
+            this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseDown);
             // 
             // pictureBox3
             // 

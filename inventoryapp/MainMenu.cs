@@ -1,4 +1,5 @@
 using System.Data.SqlClient;
+using System.Runtime.InteropServices;
 
 namespace inventoryapp
 {
@@ -41,6 +42,18 @@ namespace inventoryapp
                 }
                 connection.Close();
             }
+        }
+
+        [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.dll", EntryPoint = "SendMessage")]
+
+        private extern static void SendMessage(System.IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        private void panel4_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }
