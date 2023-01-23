@@ -49,5 +49,24 @@ namespace inventoryapp
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void CreateBtnUser_Click(object sender, EventArgs e)
+        {
+            CreateUser createUser = new CreateUser();
+            createUser.Show();
+
+           var db = Conns();
+           var comand = commandRole(db);
+
+            SqlDataReader reader = comand.ExecuteReader();
+            var a = "";
+            
+            while (reader.Read())
+            {
+                a = (reader["Role_Name"].ToString());
+                createUser.Cbodato(a);
+            }
+           
+        }
     }
 }

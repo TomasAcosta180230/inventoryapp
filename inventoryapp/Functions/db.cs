@@ -9,6 +9,12 @@ namespace inventoryapp.Functions
 {
     public class db
     {
+        public static SqlCommand commandRole(SqlConnection db)
+        {
+
+            SqlCommand command = new SqlCommand("SELECT * FROM C_ROLES", db);
+            return command;
+        }
         public static SqlConnection Conns()
         {
             SqlConnection connection = new SqlConnection();
