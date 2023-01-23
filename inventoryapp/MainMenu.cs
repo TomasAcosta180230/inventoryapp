@@ -1,5 +1,8 @@
+using inventoryapp.Functions;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
+using static inventoryapp.Functions.db;
+using static inventoryapp.Functions.USER;
 
 namespace inventoryapp
 {
@@ -25,23 +28,14 @@ namespace inventoryapp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection())
-            {
-                connection.ConnectionString = "Server=appserver32.ddns.net;Database=master;Trusted_Connection=false;User Id=user12;Password=Alejandro12;";
             
-                // Aquí puede ejecutar comandos SQL y trabajar con los datos
-                try
-                {
-                    connection.Open();
-                    MessageBox.Show("Conected!", "Conexion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    
-                }
-                catch (SqlException es)
-                {
-                    MessageBox.Show(es.ToString(), "Conexion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation) ;
-                }
-                connection.Close();
-            }
+            string USERNAME = UserInput.Text;
+            string PASS = PassInput.Text;
+
+            var db = Conns();
+            var res = logiUser(USERNAME,PASS,db);
+
+
         }
 
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
