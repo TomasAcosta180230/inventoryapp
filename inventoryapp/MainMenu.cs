@@ -34,8 +34,14 @@ namespace inventoryapp
 
             var db = Conns();
             var res = logiUser(USERNAME,PASS,db);
-
-
+            if(res == "1")
+            {
+                Dashboardcs dashboardcs = new Dashboardcs();
+                this.Enabled = false;
+                this.Hide();
+                dashboardcs.Show();
+            }
+           
         }
 
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
@@ -50,23 +56,6 @@ namespace inventoryapp
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void CreateBtnUser_Click(object sender, EventArgs e)
-        {
-            CreateUser createUser = new CreateUser();
-            createUser.Show();
-
-           var db = Conns();
-           var comand = commandRole(db);
-
-            SqlDataReader reader = comand.ExecuteReader();
-            var a = "";
-            
-            while (reader.Read())
-            {
-                a = (reader["Role_Name"].ToString());
-                createUser.Cbodato(a);
-            }
-           
-        }
+     
     }
 }

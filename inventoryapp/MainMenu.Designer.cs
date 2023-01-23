@@ -32,7 +32,6 @@
             this.TITTLE = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.CreateBtnUser = new System.Windows.Forms.Button();
             this.Password = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.PassInput = new System.Windows.Forms.TextBox();
@@ -80,7 +79,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel2.Controls.Add(this.CreateBtnUser);
             this.panel2.Controls.Add(this.Password);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.PassInput);
@@ -90,21 +88,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(991, 508);
             this.panel2.TabIndex = 1;
-            // 
-            // CreateBtnUser
-            // 
-            this.CreateBtnUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CreateBtnUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise;
-            this.CreateBtnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CreateBtnUser.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CreateBtnUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.CreateBtnUser.Location = new System.Drawing.Point(525, 311);
-            this.CreateBtnUser.Name = "CreateBtnUser";
-            this.CreateBtnUser.Size = new System.Drawing.Size(94, 29);
-            this.CreateBtnUser.TabIndex = 6;
-            this.CreateBtnUser.Text = "Create";
-            this.CreateBtnUser.UseVisualStyleBackColor = true;
-            this.CreateBtnUser.Click += new System.EventHandler(this.CreateBtnUser_Click);
             // 
             // Password
             // 
@@ -124,7 +107,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(405, 311);
+            this.button1.Location = new System.Drawing.Point(461, 309);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 29);
             this.button1.TabIndex = 4;
@@ -187,6 +170,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.RightToLeftLayout = true;
             this.Text = "Inventory";
+          
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -208,6 +192,5 @@
         private TextBox UserInput;
         private Label User;
         private Label Password;
-        private Button CreateBtnUser;
     }
 }

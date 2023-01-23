@@ -2,6 +2,38 @@
 {
     partial class CreateUser
     {
+   
+        // Allow Combo Box to center aligned
+        private void cbxDesign_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            // By using Sender, one method could handle multiple ComboBoxes
+            ComboBox cbx = sender as ComboBox;
+            if (cbx != null)
+            {
+                // Always draw the background
+                e.DrawBackground();
+
+                // Drawing one of the items?
+                if (e.Index >= 0)
+                {
+                    // Set the string alignment.  Choices are Center, Near and Far
+                    StringFormat sf = new StringFormat();
+                    sf.LineAlignment = StringAlignment.Center;
+                    sf.Alignment = StringAlignment.Center;
+
+                    // Set the Brush to ComboBox ForeColor to maintain any ComboBox color settings
+                    // Assumes Brush is solid
+                    Brush brush = new SolidBrush(cbx.ForeColor);
+
+                    // If drawing highlighted selection, change brush
+                    if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
+                        brush = SystemBrushes.HighlightText;
+
+                    // Draw the string
+                    e.Graphics.DrawString(cbx.Items[e.Index].ToString(), cbx.Font, brush, e.Bounds, sf);
+                }
+            }
+        }
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -78,11 +110,14 @@
             // 
             // RoleComboBox
             // 
+            this.RoleComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.RoleComboBox.FormattingEnabled = true;
             this.RoleComboBox.Location = new System.Drawing.Point(436, 367);
             this.RoleComboBox.Name = "RoleComboBox";
             this.RoleComboBox.Size = new System.Drawing.Size(302, 28);
             this.RoleComboBox.TabIndex = 10;
+            this.RoleComboBox.Text = "Select Role";
+            this.RoleComboBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cbxDesign_DrawItem);
             // 
             // PassInput
             // 
@@ -93,7 +128,6 @@
             this.PassInput.PlaceholderText = "Enter the Password";
             this.PassInput.Size = new System.Drawing.Size(302, 27);
             this.PassInput.TabIndex = 9;
-            this.PassInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // LastNameInput
             // 
@@ -104,7 +138,6 @@
             this.LastNameInput.PlaceholderText = "Enter the Lastname";
             this.LastNameInput.Size = new System.Drawing.Size(302, 27);
             this.LastNameInput.TabIndex = 8;
-            this.LastNameInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // NameInput
             // 
@@ -115,7 +148,6 @@
             this.NameInput.PlaceholderText = "Enter the Name";
             this.NameInput.Size = new System.Drawing.Size(302, 27);
             this.NameInput.TabIndex = 7;
-            this.NameInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
@@ -193,6 +225,9 @@
             this.MaximizeBox = false;
             this.Name = "CreateUser";
             this.Text = "CreateUser";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateUser_FormClosing);
+            
+            this.Load += new System.EventHandler(this.CreateUser_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
