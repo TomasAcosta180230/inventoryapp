@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.LoginName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -37,21 +38,35 @@
             this.CreateUserBtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1488, 179);
             this.panel1.TabIndex = 13;
+            // 
+            // LoginName
+            // 
+            this.LoginName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LoginName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LoginName.Location = new System.Drawing.Point(3, 15);
+            this.LoginName.Name = "LoginName";
+            this.LoginName.Size = new System.Drawing.Size(109, 29);
+            this.LoginName.TabIndex = 5;
+            this.LoginName.Text = "sadasd";
             // 
             // pictureBox1
             // 
@@ -159,6 +174,29 @@
             this.button1.Text = "Dashboard";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.button3);
+            this.panel4.Controls.Add(this.LoginName);
+            this.panel4.Location = new System.Drawing.Point(1117, 12);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(250, 125);
+            this.panel4.TabIndex = 15;
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button3.Location = new System.Drawing.Point(135, 11);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(94, 29);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Salir";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Dashboardcs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -174,6 +212,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -189,5 +228,8 @@
         private Button CreateUserBtn;
         private Button button2;
         private PictureBox pictureBox1;
+        public Label LoginName;
+        private Panel panel4;
+        private Button button3;
     }
 }

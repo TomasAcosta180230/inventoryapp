@@ -42,20 +42,30 @@ namespace inventoryapp
 
 
 
-        MainMenu MainMenu;
+        MainMenu menu;
         private void Dashboardcs_FormClosing(object sender, FormClosingEventArgs e)
         {
             
-            MainMenu.Enabled = true;
-            MainMenu.Close();
+            menu.Enabled = true;
+            menu.Hide();
         }
         private void Dashboardcs_Load(object sender, EventArgs e)
         {
            
             
-            MainMenu = (MainMenu)Application.OpenForms["MainMenu"];
+            menu = (MainMenu)Application.OpenForms["MainMenu"];
         }
 
-      
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+           
+            menu.Enabled=true;
+            menu.UserInput.Text = "";
+            menu.PassInput.Text = "";
+            MessageBox.Show("Sesion Cerrada correctamente","Listo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            menu.Show();
+            
+        }
     }
 }

@@ -39,9 +39,12 @@ namespace inventoryapp
                 Dashboardcs dashboardcs = new Dashboardcs();
                 this.Enabled = false;
                 this.Hide();
+                dashboardcs.LoginName.Text = USERNAME;
                 dashboardcs.Show();
             }
-           
+            
+
+
         }
 
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]

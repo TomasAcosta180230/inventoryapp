@@ -29,7 +29,7 @@ namespace inventoryapp.Functions
             }
             catch (SqlException es)
             {
-                connection.Close(); connection.Close();
+                connection.Close();
                 MessageBox.Show(es.ToString(), "Conexion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             

@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static inventoryapp.Functions.db;
+using static inventoryapp.Functions.USER;
+
 
 namespace inventoryapp
 {
@@ -20,7 +23,22 @@ namespace inventoryapp
 
         private void CreateBtn_Click(object sender, EventArgs e)
         {
+            var db = Conns();
+            var name = NameInput.Text;
+            var lastname = LastNameInput.Text;
+            var pass = PassInput.Text;
+            var role = RoleComboBox.SelectedItem.ToString();
+            var role_id = roleid(role, db);
 
+            var res = createUser(name,lastname,pass, role_id, db);
+            if (res != "0")
+            {
+                MessageBox.Show("Cuenta creada correctamente!", "DONE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No se creo el usuario intente nuevamente!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         internal void Cbodato(string cbo1)

@@ -188,8 +188,8 @@
         private PictureBox pictureBox1;
         private Label TITTLE;
         private Button button1;
-        private TextBox PassInput;
-        private TextBox UserInput;
+        public TextBox PassInput;
+        public TextBox UserInput;
         private Label User;
         private Label Password;
     }
