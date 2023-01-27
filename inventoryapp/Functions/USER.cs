@@ -11,10 +11,31 @@ namespace inventoryapp.Functions
 {
     public class USER
     {
-        public static string createuser(string name,string lastname, SqlConnection db)
+        public static string checkifexistuser(string conc, SqlConnection db)
+        {
+            valuesBool valBool = new valuesBool();
+            string sql = "SELECT ID FROM C_USER WHERE username = @username";
+            SqlCommand cmd = new SqlCommand(sql, db);
+            cmd.Parameters.AddWithValue("@username", conc);
+            var result = cmd.ExecuteScalar();
+            if (result != null)
+            {
+                return valBool.YES();
+            }
+            else
+            {
+                
+                return valBool.NO();
+            }
+
+
+           
+        }
+
+            public static string createuser(string name,string lastname, SqlConnection db)
         {
             var us = "";
-            us = name.Substring(0, 2) + lastname.Substring(0, 4);
+            us = name.Substring(0, 2) + lastname.Substring(0, 5);
             return us;
         }
 
@@ -65,8 +86,13 @@ namespace inventoryapp.Functions
             command.Parameters.AddWithValue("@NAME", "C_USER");
             var id = command.ExecuteScalar();
             int result = 0;
-
             var conc = createuser(name, lastname,db);
+            var conccheck =  checkifexistuser(conc, db);
+            if (conccheck == "1")
+            {
+                MessageBox.Show("Usuario ya registrado!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return valBool.NO();
+            }
             DateTime currentTime = DateTime.Now;
             string sql = "INSERT INTO C_USER (ID,Name,apellido,username,Contrasena,EDIT_TIME,active,ROLE_ID) VALUES" +
                 "(@ID,@Name,@lastname,@username,@pass,@time,@active,@role)";

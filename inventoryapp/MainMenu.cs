@@ -36,11 +36,10 @@ namespace inventoryapp
             var res = logiUser(USERNAME,PASS,db);
             if(res == "1")
             {
-                Dashboardcs dashboardcs = new Dashboardcs();
-                this.Enabled = false;
-                this.Hide();
-                dashboardcs.LoginName.Text = USERNAME;
-                dashboardcs.Show();
+               this.Hide();
+               Dashboardcs dash = new Dashboardcs();
+               dash.FormClosed += (s,args) => { this.Close(); };
+               dash.Show();
             }
             
 
