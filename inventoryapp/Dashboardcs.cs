@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using static inventoryapp.Functions.db;
 using static inventoryapp.Functions.USER;
 using System.Data.SqlClient;
+using inventoryapp.Forms;
 
 namespace inventoryapp
 {
@@ -54,6 +55,20 @@ namespace inventoryapp
     
         }
 
-        
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            labelMenu.Text = "INVENTORY";
+            this.Hide();
+            Inventory frm = new Inventory();
+            frm.Show();
+            frm.FormClosed += (s, args) => {  this.Show(); this.Enabled = true; };
+           
+            var db = Conns();
+            var cmd = allinventory(db);
+            frm.dataGridView1.DataSource = cmd;
+
+        }
+
+      
     }
 }

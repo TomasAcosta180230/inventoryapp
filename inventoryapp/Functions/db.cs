@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,15 @@ namespace inventoryapp.Functions
 {
     public class db
     {
+     
+            public static DataTable allinventory (SqlConnection db)
+        {
+            SqlDataAdapter command = new SqlDataAdapter("SELECT * FROM C_INVENTORY", db);
+            DataSet dataset = new DataSet();
+            command.Fill(dataset);
+            var table = dataset.Tables[0];
+            return table;
+        }
         public static SqlCommand commandRole(SqlConnection db)
         {
 

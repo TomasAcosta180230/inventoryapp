@@ -38,6 +38,7 @@ namespace inventoryapp
             {
                this.Hide();
                Dashboardcs dash = new Dashboardcs();
+               dash.LoginName.Text = USERNAME;
                dash.FormClosed += (s,args) => { this.Close(); };
                dash.Show();
             }

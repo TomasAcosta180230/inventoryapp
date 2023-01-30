@@ -33,10 +33,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.LoginName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelMenu = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnInventory = new System.Windows.Forms.Button();
             this.CreateUserBtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -52,7 +52,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.labelMenu);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1488, 179);
@@ -101,16 +101,16 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // labelMenu
             // 
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(556, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(598, 119);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "MAIN MENU\r\n";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelMenu.Font = new System.Drawing.Font("Arial Rounded MT Bold", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelMenu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelMenu.Location = new System.Drawing.Point(556, 44);
+            this.labelMenu.Name = "labelMenu";
+            this.labelMenu.Size = new System.Drawing.Size(598, 119);
+            this.labelMenu.TabIndex = 3;
+            this.labelMenu.Text = "MAIN MENU\r\n";
+            this.labelMenu.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel2
             // 
@@ -124,7 +124,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel3.Controls.Add(this.button4);
+            this.panel3.Controls.Add(this.btnInventory);
             this.panel3.Controls.Add(this.CreateUserBtn);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.button1);
@@ -133,21 +133,22 @@
             this.panel3.Size = new System.Drawing.Size(314, 719);
             this.panel3.TabIndex = 14;
             // 
-            // button4
+            // btnInventory
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Location = new System.Drawing.Point(3, 218);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(314, 51);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Inventory";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnInventory.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnInventory.FlatAppearance.BorderSize = 0;
+            this.btnInventory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.btnInventory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInventory.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnInventory.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnInventory.Location = new System.Drawing.Point(3, 218);
+            this.btnInventory.Name = "btnInventory";
+            this.btnInventory.Size = new System.Drawing.Size(314, 51);
+            this.btnInventory.TabIndex = 3;
+            this.btnInventory.Text = "Inventory";
+            this.btnInventory.UseVisualStyleBackColor = false;
+            this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
             // 
             // CreateUserBtn
             // 
@@ -207,7 +208,7 @@
             this.Name = "Dashboardcs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboardcs";
-            
+         
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -221,10 +222,10 @@
 
         private Panel panel1;
         private Panel panel2;
-        private Label label1;
+        private Label labelMenu;
         private Panel panel3;
         private Button button1;
-        private Button button4;
+        private Button btnInventory;
         private Button CreateUserBtn;
         private Button button2;
         private PictureBox pictureBox1;
