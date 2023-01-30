@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static inventoryapp.Functions.Scan;
+
 
 namespace inventoryapp.Functions
 {
@@ -32,9 +32,8 @@ namespace inventoryapp.Functions
             if (result != null)
             {
                 return valBool.YES();
-                Scan scan = new Scan();
-                scan.donelabel.Visible = true;
-                scan.donelabel.Text = "Succesfuly added";
+                
+                
             }
             else
             {
@@ -69,8 +68,10 @@ namespace inventoryapp.Functions
             SqlCommand cmd = new SqlCommand(sql, db);
             cmd.Parameters.AddWithValue("@ID", ID);
             var result = cmd.ExecuteScalar();
+            Scan scan = new Scan();
             if (result != null)
             {
+              
                 return valBool.YES();
             }
             else

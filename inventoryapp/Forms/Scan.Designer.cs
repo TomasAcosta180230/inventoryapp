@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.donelabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ScanInput = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -101,6 +103,10 @@
             this.ScanInput.TabIndex = 0;
             this.ScanInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ScanInput_KeyDown);
             // 
+            // timer1
+            // 
+      
+            // 
             // Scan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -126,5 +132,6 @@
         private Label label1;
         private TextBox ScanInput;
         public Label donelabel;
+        private System.Windows.Forms.Timer timer1;
     }
 }
